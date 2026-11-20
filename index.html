@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Register for TechConf 2025 — the premier developer conference." />
+  <title>TechConf 2025 — Event Registration</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ========== HERO BANNER ========== -->
+  <header class="hero" role="banner">
+    <div class="hero__inner">
+      <span class="hero__badge">📅 March 15–17, 2025</span>
+      <h1 class="hero__title">TechConf <span class="accent">2025</span></h1>
+      <p class="hero__subtitle">Three days of keynotes, workshops, and networking with 5 000+ developers.</p>
+      <a href="#registration" class="btn btn--primary hero__cta">Reserve Your Spot</a>
+    </div>
+  </header>
+
+  <!-- ========== MAIN ========== -->
+  <main>
+
+    <!-- HIGHLIGHTS -->
+    <section class="highlights" aria-label="Conference highlights">
+      <div class="container">
+        <div class="highlights__grid">
+          <div class="card">
+            <div class="card__icon" aria-hidden="true">🎤</div>
+            <h3 class="card__title">50+ Speakers</h3>
+            <p class="card__text">Industry leaders from Google, Meta, and top startups.</p>
+          </div>
+          <div class="card">
+            <div class="card__icon" aria-hidden="true">🛠️</div>
+            <h3 class="card__title">30 Workshops</h3>
+            <p class="card__text">Hands-on sessions in AI, Web Dev, DevOps, and Cloud.</p>
+          </div>
+          <div class="card">
+            <div class="card__icon" aria-hidden="true">🌐</div>
+            <h3 class="card__title">Hybrid Format</h3>
+            <p class="card__text">Attend in-person in San Francisco or join us online.</p>
+          </div>
+          <div class="card">
+            <div class="card__icon" aria-hidden="true">🎟️</div>
+            <h3 class="card__title">Early-Bird Price</h3>
+            <p class="card__text">Save 30 % if you register before January 31, 2025.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REGISTRATION FORM -->
+    <section id="registration" class="form-section" aria-labelledby="form-heading">
+      <div class="container form-section__inner">
+
+        <div class="form-section__copy">
+          <h2 id="form-heading" class="section-title">Register Now</h2>
+          <p class="section-subtitle">Fill in the form and you'll receive a confirmation e-mail within minutes.</p>
+          <ul class="perk-list" aria-label="Registration perks">
+            <li>✅ Instant e-ticket delivery</li>
+            <li>✅ Free access to recorded sessions</li>
+            <li>✅ Exclusive Slack community</li>
+            <li>✅ Swag bag for in-person attendees</li>
+          </ul>
+        </div>
+
+        <div class="form-section__card">
+          <!-- SUCCESS MESSAGE (hidden by default) -->
+          <div id="success-msg" class="success-msg" role="alert" aria-live="polite" hidden>
+            <span class="success-msg__icon" aria-hidden="true">🎉</span>
+            <h3>You're registered!</h3>
+            <p>Check your inbox for the confirmation e-mail.</p>
+          </div>
+
+          <form id="reg-form" class="reg-form" novalidate aria-label="Event registration form">
+
+            <div class="form-row">
+              <div class="field">
+                <label class="field__label" for="first-name">First Name <span class="required" aria-hidden="true">*</span></label>
+                <input class="field__input" id="first-name" name="first-name" type="text"
+                       autocomplete="given-name" placeholder="Jane"
+                       required minlength="2" maxlength="50"
+                       aria-required="true" aria-describedby="first-name-err" />
+                <span class="field__error" id="first-name-err" role="alert"></span>
+              </div>
+              <div class="field">
+                <label class="field__label" for="last-name">Last Name <span class="required" aria-hidden="true">*</span></label>
+                <input class="field__input" id="last-name" name="last-name" type="text"
+                       autocomplete="family-name" placeholder="Doe"
+                       required minlength="2" maxlength="50"
+                       aria-required="true" aria-describedby="last-name-err" />
+                <span class="field__error" id="last-name-err" role="alert"></span>
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="email">Email Address <span class="required" aria-hidden="true">*</span></label>
+              <input class="field__input" id="email" name="email" type="email"
+                     autocomplete="email" placeholder="jane@example.com"
+                     required aria-required="true" aria-describedby="email-err" />
+              <span class="field__error" id="email-err" role="alert"></span>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="phone">Phone Number</label>
+              <input class="field__input" id="phone" name="phone" type="tel"
+                     autocomplete="tel" placeholder="+1 (555) 000-0000"
+                     pattern="[\+\d\s\(\)\-]{7,20}" aria-describedby="phone-err phone-hint" />
+              <span class="field__hint" id="phone-hint">Optional — only used for urgent event updates.</span>
+              <span class="field__error" id="phone-err" role="alert"></span>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="ticket-type">Ticket Type <span class="required" aria-hidden="true">*</span></label>
+              <select class="field__input field__select" id="ticket-type" name="ticket-type"
+                      required aria-required="true" aria-describedby="ticket-err">
+                <option value="" disabled selected>— Select a ticket —</option>
+                <option value="online">🌐 Online Pass — Free</option>
+                <option value="standard">🎟️ Standard In-Person — $299</option>
+                <option value="vip">⭐ VIP In-Person — $599</option>
+                <option value="student">🎓 Student — $99 (ID required)</option>
+              </select>
+              <span class="field__error" id="ticket-err" role="alert"></span>
+            </div>
+
+            <fieldset class="field fieldset">
+              <legend class="field__label">Tracks of Interest <span class="required" aria-hidden="true">*</span></legend>
+              <div class="checkbox-grid" role="group" aria-required="true" aria-describedby="tracks-err">
+                <label class="checkbox-label"><input type="checkbox" name="tracks" value="ai" /> AI &amp; ML</label>
+                <label class="checkbox-label"><input type="checkbox" name="tracks" value="web" /> Web Development</label>
+                <label class="checkbox-label"><input type="checkbox" name="tracks" value="devops" /> DevOps &amp; Cloud</label>
+                <label class="checkbox-label"><input type="checkbox" name="tracks" value="security" /> Cybersecurity</label>
+                <label class="checkbox-label"><input type="checkbox" name="tracks" value="mobile" /> Mobile Dev</label>
+                <label class="checkbox-label"><input type="checkbox" name="tracks" value="data" /> Data Engineering</label>
+              </div>
+              <span class="field__error" id="tracks-err" role="alert"></span>
+            </fieldset>
+
+            <div class="field">
+              <label class="field__label" for="dietary">Dietary Requirements</label>
+              <select class="field__input field__select" id="dietary" name="dietary">
+                <option value="none">None / Not Applicable</option>
+                <option value="vegetarian">Vegetarian</option>
+                <option value="vegan">Vegan</option>
+                <option value="gluten-free">Gluten-Free</option>
+                <option value="halal">Halal</option>
+                <option value="other">Other — I'll specify below</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="notes">Additional Notes</label>
+              <textarea class="field__input field__textarea" id="notes" name="notes"
+                        placeholder="Accessibility needs, questions, etc."
+                        rows="4" maxlength="500" aria-describedby="notes-count"></textarea>
+              <span class="field__hint" id="notes-count">0 / 500</span>
+            </div>
+
+            <div class="field">
+              <label class="checkbox-label checkbox-label--terms">
+                <input id="terms" name="terms" type="checkbox"
+                       required aria-required="true" aria-describedby="terms-err" />
+                I agree to the <a href="#" class="link">Terms of Service</a> and
+                <a href="#" class="link">Privacy Policy</a>.
+                <span class="required" aria-hidden="true">*</span>
+              </label>
+              <span class="field__error" id="terms-err" role="alert"></span>
+            </div>
+
+            <button type="submit" class="btn btn--primary btn--full" id="submit-btn">
+              <span class="btn__label">Complete Registration</span>
+              <span class="btn__spinner" aria-hidden="true" hidden></span>
+            </button>
+
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container footer__inner">
+      <p>&copy; 2025 TechConf. All rights reserved.</p>
+      <nav aria-label="Footer links">
+        <a href="#" class="footer__link">Contact</a>
+        <a href="#" class="footer__link">Refund Policy</a>
+        <a href="#" class="footer__link">Accessibility</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
